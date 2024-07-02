@@ -32,6 +32,19 @@ header {
   justify-content: center;
   padding: 20px;
   font-size: 1rem;
+  align-items: center;
+  gap: 20px;
+  flex-direction: column;
+}
+
+header div {
+  cursor: pointer;
+  transition: 1s all;
+  color: black;
+}
+
+header div:hover {
+  color: #ffbf00;
 }
 
 header h1 {

@@ -3,9 +3,7 @@ import { fibbo } from "./lib/fibbonacci/fibbonacci.js";
 import { zigma } from "./lib/zigma/zigma.js";
 let selectedTemplate = "#controller";
 const onClickHandle = (e) => {
-  const oldTemplate = document.querySelector(selectedTemplate);
   selectedTemplate = "#" + e.target.name;
-  console.log(oldTemplate);
   const newTemplate = document.querySelector(selectedTemplate);
   document.querySelector("#render").replaceChildren(newTemplate.content);
   addAfterLoad(selectedTemplate);
@@ -49,7 +47,12 @@ const addAfterLoad = (template) => {
 
 const onloadData = () => {
   const template = document.querySelector(selectedTemplate);
+  document.querySelector("#backtohome").addEventListener("click", restoreMenu);
   document.querySelector("#render").appendChild(template.content);
+};
+
+const restoreMenu = () => {
+  window.location.replace("/");
 };
 
 onloadData();
