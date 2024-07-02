@@ -52,7 +52,7 @@ const onloadData = () => {
 };
 
 const restoreMenu = () => {
-  window.location.replace("/");
+  window.location.replace("/algorithms");
 };
 
 onloadData();
