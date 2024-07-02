@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/styles/main.css" />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon.png"
+      type="image/png"
+    />
+    <title>Algorithms</title>
+  </head>
+  <body>
+    <header><h1>Algorithms</h1></header>
+    <main id="render"></main>
+
+    <template id="controller">
+      <section class="glass-view">
+        <button name="sof" class="algorithm">Sum of Factorial</button>
+        <button name="fibbo" class="algorithm">Fibbonacci</button>
+        <button name="zigma" class="algorithm">zigma</button>
+      </section>
+    </template>
+    <template id="sof">
+      <section class="glass-view">
+        <label>
+          <div>enter number to calculate sum of Factorial!</div>
+
+          <input
+            placeholder="enter number here..."
+            name="sof"
+            class="input"
+            type="number"
+          />
+          <div style="font-size: 12px">press enter to calculate</div>
+        </label>
+        <label>
+          <img width="32" src="./assets/images/JavaScript-logo.png" alt="js" />
+          <textarea id="textarea" value="" disabled></textarea>
+        </label>
+        <label>
+          output
+          <input class="output" value="" disabled />
+        </label>
+      </section>
+    </template>
+    <template id="fibbo">
+      <section class="glass-view">
+        <label>
+          <div>enter number to calculate Fibbonacci Sequence!</div>
+
+          <input
+            placeholder="enter number here..."
+            name="fibbo"
+            class="input"
+            type="number"
+          />
+          <div style="font-size: 12px">press enter to calculate</div>
+        </label>
+        <label>
+          <img width="32" src="./assets/images/JavaScript-logo.png" alt="js" />
+          <textarea id="textarea" value="" disabled></textarea>
+        </label>
+        <label>
+          output
+          <input class="output" value="" disabled />
+        </label>
+      </section>
+    </template>
+    <template id="zigma">
+      <section class="glass-view">
+        <label>
+          <div>enter number to calculate zigma 0 to n numbers!</div>
+
+          <input
+            placeholder="enter number here..."
+            name="zigma"
+            class="input"
+            type="number"
+          />
+          <div style="font-size: 12px">press enter to calculate</div>
+        </label>
+        <label>
+          <img width="32" src="./assets/images/JavaScript-logo.png" alt="js" />
+          <textarea id="textarea" value="" disabled></textarea>
+        </label>
+        <label>
+          output
+          <input class="output" value="" disabled />
+        </label>
+      </section>
+    </template>
+
+    <script type="module">
+      import { onClickHandle } from "./app.js";
+
+      const addEvents = () => {
+        let doc = document.querySelectorAll(".algorithm");
+        let docLength = doc.length;
+        for (let i = 0; i < docLength; i++) {
+          doc[i].addEventListener("click", onClickHandle);
+        }
+      };
+
+      addEvents();
+    </script>
+  </body>
+</html>
