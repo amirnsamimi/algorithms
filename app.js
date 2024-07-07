@@ -1,6 +1,7 @@
 import { sof } from "./lib/sof/sof.js";
 import { fibbo } from "./lib/fibbonacci/fibbonacci.js";
 import { zigma } from "./lib/zigma/zigma.js";
+import { recursive } from "./lib/recursive/recursive.js";
 let selectedTemplate = "#controller";
 const onClickHandle = (e) => {
   selectedTemplate = "#" + e.target.name;
@@ -26,6 +27,10 @@ const addAfterLoad = (template) => {
       calculationHanlder = zigmaHandle;
       scriptCode = zigma;
       break;
+      case "#recursive":
+        calculationHanlder = recursiveHanlde;
+        scriptCode = recursive;
+        break;
     default:
       calculationHanlder = () => {};
       break;
@@ -86,6 +91,20 @@ const zigmaHandle = (event) => {
     .querySelector("#render")
     .getElementsByTagName("section")[0]
     .querySelector(".output").value = output;
+};
+
+
+
+// Zigma
+
+const recursiveHanlde = (event) => {
+
+  let output = recursive(event.target.value);
+  document
+    .querySelector("#render")
+    .getElementsByTagName("section")[0]
+    .querySelector(".output").value = output;
+
 };
 
 export { onClickHandle };
