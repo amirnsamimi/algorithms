@@ -112,7 +112,7 @@ const recursiveHanlde = (event) => {
 };
 const recursive2Hanlde = (event) => {
 
-  let output = recursive2(event.target.value);
+  let output = recursive2(Number(event.target.value));
   document
     .querySelector("#render")
     .getElementsByTagName("section")[0]
