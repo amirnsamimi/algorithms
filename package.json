@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/amirnsamimi/algorithms#readme",
   "description": "",
-  "devDependencies": {
-    "undici-types": "^7.10.0"
+  "dependencies": {
+    "inquirer": "^12.6.3"
   }
 }

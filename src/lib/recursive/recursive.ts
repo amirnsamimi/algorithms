@@ -1,4 +1,4 @@
-export function recursive(word) {
+export function recursive(word:string) {
     // Helper function to generate partitions
     function recursiveHelper(prefix, remaining) {
         if (remaining.length === 0) {
@@ -18,7 +18,7 @@ export function recursive(word) {
 }
     
     let countArr = []
-    export  function recursive2(count) {
+    export  function recursive2(count:number) {
 
         countArr = []
         
