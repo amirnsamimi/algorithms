@@ -1,8 +1,8 @@
 export function recursive(word:string) {
-    // Helper function to generate partitions
-    function recursiveHelper(prefix, remaining) {
+    let results:Array<string> = [];
+    function recursiveHelper(prefix:string[], remaining:string) {
         if (remaining.length === 0) {
-            results.push(prefix);
+            results.push(...prefix);
             return;
         }
         
@@ -12,7 +12,7 @@ export function recursive(word:string) {
         }
     }
 
-    let results = [];
+
     recursiveHelper([], word);
     return results;
 }

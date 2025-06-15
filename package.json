@@ -7,7 +7,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "build": "tsc",
     "start": "node dist/app.js"
   },
@@ -23,6 +23,14 @@
   "homepage": "https://github.com/amirnsamimi/algorithms#readme",
   "description": "",
   "dependencies": {
-    "inquirer": "^12.6.3"
+    "inquirer": "^12.6.3",
+    "ts-node": "^10.9.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/webpack": "^4.41.40",
+    "jest": "^30.0.0",
+    "ts-jest": "^29.4.0",
+    "typescript": "^5.8.3"
   }
 }
