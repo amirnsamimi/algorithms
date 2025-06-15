@@ -1,4 +1,4 @@
-import { fibbo } from "./fibbonacci.js"
+import  fibbo  from "./fibbonacci.js"
 
 describe('fibonacci', () => {
   test('should return 0 for n = 0', () => {

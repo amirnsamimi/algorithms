@@ -1,4 +1,4 @@
-export function longestValidSubstring(s: string): number {
+export const longestValidSubstring = (s: string): number => {
   if(s === "") throw new Error("Enter a valid string"); 
   if(typeof s === "number") throw new Error("String should not contain numbers or characters")
   const vowels = new Set(["a", "e", "i", "o", "u"]);

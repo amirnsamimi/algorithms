@@ -1,4 +1,4 @@
-export const fibbo = (n: number): number => {
+ const fibbo = (n: number): number => {
   if (n < 0) throw new Error("Input must be a non-negative integer");
   if (n === 0) return 0;
   if (n === 1) return 1;
@@ -14,3 +14,6 @@ export const fibbo = (n: number): number => {
 
   return curr;
 };
+
+
+export default fibbo;

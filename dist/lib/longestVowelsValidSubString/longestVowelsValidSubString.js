@@ -1,4 +1,4 @@
-export function longestValidSubstring(s) {
+export const longestValidSubstring = (s) => {
     if (s === "")
         throw new Error("Enter a valid string");
     if (typeof s === "number")
@@ -23,7 +23,7 @@ export function longestValidSubstring(s) {
         }
     }
     return maxLen;
-}
+};
 // console.log(longestValidSubstring("aeiouxyz"));
 // export function longestValidSubstring(s) {
 //     const vowels = new Set(["a", "e", "i", "o", "u"]);
