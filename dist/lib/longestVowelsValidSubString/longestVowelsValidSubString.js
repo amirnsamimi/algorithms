@@ -1,4 +1,8 @@
 export function longestValidSubstring(s) {
+    if (s === "")
+        throw new Error("Enter a valid string");
+    if (typeof s === "number")
+        throw new Error("String should not contain numbers or characters");
     const vowels = new Set(["a", "e", "i", "o", "u"]);
     let maxLen = 0;
     for (let i = 0; i < s.length; i++) {

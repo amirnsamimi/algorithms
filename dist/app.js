@@ -1,9 +1,15 @@
+// import { sof } from "./lib/sof/sof.js";
+// import { fibbo } from "./lib/fibbonacci/fibbonacci.js";
+// import { zigma } from "./lib/zigma/zigma.js";
 import { longestValidSubstring } from "./lib/longestVowelsValidSubString/longestVowelsValidSubString.js";
 import inquirer from "inquirer";
+import { sumOfFactorials } from "./lib/sof/sof.js";
 var moduleMap;
 (function (moduleMap) {
     moduleMap["longest substring with valid even vowels"] = "longest substring with valid even vowels";
     moduleMap["recursive algo"] = "recursive algo";
+    moduleMap["fibbonacci algorithm"] = "fibbonacci algorithm";
+    moduleMap["sum of factorials"] = "sum of factorials";
 })(moduleMap || (moduleMap = {}));
 const choices = Object.keys(moduleMap);
 const main = async () => {
@@ -24,18 +30,20 @@ const main = async () => {
             },
         ]);
         switch (application) {
-            case moduleMap["longest substring with valid even vowels"]:
+            case moduleMap["longest substring with valid even vowels"]: {
                 const result = longestValidSubstring(inputString || "");
-                if (result > 0) {
-                    console.log(`The longest valid substring is: ${result} long`);
-                }
-                else {
-                    console.log("No valid substring found.");
-                }
+                console.log(`The longest valid substring is: ${result} long`);
                 break;
-            case moduleMap["recursive algo"]:
+            }
+            case moduleMap["fibbonacci algorithm"]: {
                 console.log("thank you");
                 break;
+            }
+            case moduleMap["sum of factorials"]: {
+                const result = sumOfFactorials(inputString || "");
+                console.log(`Sum of factorial is: ${result}`);
+                break;
+            }
             default:
                 console.log("not valid");
                 break;

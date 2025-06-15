@@ -4,11 +4,12 @@
 
 import { longestValidSubstring } from "./lib/longestVowelsValidSubString/longestVowelsValidSubString.js";
 import inquirer from "inquirer";
+import { sumOfFactorials } from "./lib/sof/sof.js";
 
 enum moduleMap {
   "longest substring with valid even vowels" = "longest substring with valid even vowels",
-  "recursive algo" = "recursive algo",
-  "fibbonacci algorithm" = "fibbonacci algorithm"
+  "fibbonacci algorithm" = "fibbonacci algorithm",
+  "sum of factorials" = "sum of factorials",
 }
 
 const choices = Object.keys(moduleMap);
@@ -24,8 +25,6 @@ const main = async () => {
       },
     ]);
 
-
-
     const { inputString } = await inquirer.prompt([
       {
         type: "input",
@@ -33,21 +32,24 @@ const main = async () => {
         message: "Enter a string to test:",
       },
     ]);
-    switch (application ) {
-      case moduleMap["longest substring with valid even vowels"]:
-      const result = longestValidSubstring(inputString || "");
-      if (result > 0) {
+    switch (application) {
+      case moduleMap["longest substring with valid even vowels"]: {
+        const result = longestValidSubstring(inputString || "");
         console.log(`The longest valid substring is: ${result} long`);
-      } else {
-        console.log("No valid substring found.");
+        break;
       }
-      break;
-      case moduleMap["recursive algo"]:
-      console.log("thank you");
-      break;
-      default: 
-      console.log("not valid")
-      break;      
+      case moduleMap["fibbonacci algorithm"]: {
+        console.log("thank you");
+        break;
+      }
+      case moduleMap["sum of factorials"]: {
+        const result = sumOfFactorials(inputString || "");
+        console.log(`Sum of factorial is: ${result}`);
+        break;
+      }
+      default:
+        console.log("not valid");
+        break;
     }
 
     const { again } = await inquirer.prompt([
