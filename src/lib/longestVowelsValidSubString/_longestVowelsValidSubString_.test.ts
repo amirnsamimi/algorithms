@@ -17,7 +17,7 @@ describe("longestValidSubstring", () => {
   });
 
   test("throws error when input is a number (should be string)", () => {
-    // @ts-expect-error testing invalid input type intentionally
+    // @ts-expect-error 
     expect(() => longestValidSubstring(123)).toThrow(
       "String should not contain numbers or characters"
     );

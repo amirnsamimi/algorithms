@@ -2,11 +2,15 @@ import inquirer from "inquirer";
 import { longestValidSubstring } from "./lib/longestVowelsValidSubString/longestVowelsValidSubString.js";
 import { sumOfFactorials } from "./lib/sof/sof.js";
 import { maxGroupLengthSum } from "./lib/maxGroupLenghtSum/maxGroupLengthSum.js";
+import { run as featureRun } from "./app/featureflag.cli.js";
+import { run as queryRun } from "./lib/query_sql/queryCli.cli.js";
 var moduleMap;
 (function (moduleMap) {
     moduleMap["longest substring with valid even vowels"] = "longest substring with valid even vowels";
     moduleMap["sum of factorials"] = "sum of factorials";
     moduleMap["max group length sum"] = "max group length sum";
+    moduleMap["feature Flag"] = "feature Flag";
+    moduleMap["SQL Queries"] = "SQL Queries";
 })(moduleMap || (moduleMap = {}));
 const choices = Object.keys(moduleMap);
 const main = async () => {
@@ -60,9 +64,16 @@ const main = async () => {
                 console.log(`Sum of factorial is: ${result}`);
                 break;
             }
+            case moduleMap["feature Flag"]: {
+                await featureRun();
+                break;
+            }
+            case moduleMap["SQL Queries"]: {
+                await queryRun();
+                break;
+            }
             default:
                 console.log("not valid");
-                break;
         }
         const { again } = await inquirer.prompt([
             {
