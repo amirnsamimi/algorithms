@@ -33,18 +33,6 @@ npm start       # Starts the CLI app (runs built JS)
 npm run cli     # Starts the CLI app (runs built JS)
 ```
 
-## Project Structure 
-
-.
-├── src/
-│   ├── app.ts                       # Main CLI logic
-│   ├── lib/                         # Algorithm modules
-│   ├── app/featureflag.cli.ts       # Feature Flag CLI module
-│   └── lib/query_sql/queryCli.cli.ts # SQL Query CLI module
-├── dist/                            # Output of build (compiled JS)
-├── package.json
-├── tsconfig.json
-└── README.md
 
 ## Feature Flag Module usage
 
